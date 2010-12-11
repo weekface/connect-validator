@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express.createServer();
-var log = require('logging').from(__filename);
+//var log = require('logging').from(__filename);
 var Validate = require('../index.js').Validate;
 
 //首先 new Validate()，之后调用其check方法，
@@ -19,7 +19,7 @@ app.get('/book',new Validate().check({
     }
 }), function(req,res){
     if(req.errors){
-        log(req.errors);
+        //        log(req.errors);
         res.send('<font color=\"red\">'+req.errors+'</font>');
     }
     else

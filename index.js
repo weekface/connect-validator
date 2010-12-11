@@ -1,6 +1,6 @@
 //本插件利用node-validator验证库
 var nodeValidator = require('./vendor/node-validator').Validator;
-var log = require('logging').from(__filename);
+//var log = require('logging').from(__filename);
 var nv = new nodeValidator();
 
 var Validate = function(){
@@ -26,7 +26,7 @@ var Validate = function(){
 //并最后返回一个connect中间件
 Validate.prototype.check = function(fields){
     var self = this;
-    log(self);
+    //    log(self);
     return function(req,res,next){
         for(j in fields){
             self.fieldName = j;
